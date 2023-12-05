@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+// in react you can only pass data downward, do this by prrops 
+/*
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// three steps to context
+1. [ ] Create the context
+2. [ ] Provide the context 
+3. [ ] Consume the context
+*/
+
+// app component is commen component that header and button use so this is where we provide what we want context to do aka  seccond step provide the context  import context aabove 
+
+
+// in this context exaplme we will switch between dark an light theme 
+
+import React from "react"
+import Button from './Button';
+import Header from './Header';
+import ThemeContext from "./themeContext";
+function App(props) {
+    return (
+        <>
+       
+        {/* // to use theme context, you   would wrap header and button in it like a parent  */}
+
+{/* using value inth etge belo, lets us pass data to these compnetns without using a bunch of props  */}
+        <ThemeContext.Provider 
+        
+        // hard coded it to be the ligth theme fror now 
+        value= "light"  >
+            <Header/>
+            <Button/>
+
+            </ThemeContext.Provider>
+        </>
+    );
 }
 
 export default App;
